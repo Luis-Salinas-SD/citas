@@ -2,7 +2,7 @@ import React from 'react'
 
 const Formulario = () => {
   return (
-    <div>
+    <div className='bg-slate-700'>
       <h2>Formulario</h2>
     </div>
   )
