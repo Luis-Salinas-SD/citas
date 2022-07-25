@@ -54,7 +54,7 @@ const Formulario = () => {
             type='date'
             className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-lg shadow-md shadow-gray-500/40'
             value={alta}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setAlta(event.target.value)}
           />
         </div>
         <div className='mt-5'>
@@ -65,7 +65,7 @@ const Formulario = () => {
             placeholder='Describe los sintomas'
             className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-lg shadow-md shadow-gray-500/40'
             value={edescail}
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(event) => setDesc(event.target.value)}
           />
         </div>
 
