@@ -8,16 +8,19 @@ const Formulario = () => {
   const [alta, setAlta] = useState('');
   const [desc, setDesc] = useState('');
 
+  /* Estado para el error de campo */
+  const [error, setError] = useState(false)
+
   /* Se maneja el envio del formulario. */
   const handleSubmit = (e) => {
     e.preventDefault();
     if ([nombre, propietario, email, alta, desc].includes('')) {
-      console.error('Algun campo vacio');
-    }else{
-      console.log('Correcto')
+      console.error('Campos vacios');
+      setError(true)
+      return;
     }
+    setError(false)
   }
-
 
   return (
     <div className='md:w-1/2 lg:w-2/5 bg-gray-100 rounded-lg border border-gray-200 shadow-md shadow-gray-300 p-5 m-2' >
@@ -30,6 +33,11 @@ const Formulario = () => {
 
       {/* Formulario */}
       <form className='bg-white shadow-md rounded-lg py-10 px-5' onSubmit={handleSubmit}>
+        {/* Mensaje de error */}
+        {error && <div className='bg-red-500 text-white text-center rounded-lg p-2 mb-2 drop-shadow-xl'>
+          <p>¡Campos incompletos!</p>
+        </div>}
+
         {/* Mascota */}
         <div className='mt-5'>
           <label htmlFor='mascota' className='block text-gray-600 uppercase font-bold'>Nombre de la mascota</label>
