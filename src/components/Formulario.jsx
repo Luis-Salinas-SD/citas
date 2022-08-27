@@ -1,20 +1,36 @@
 import { useState, useEffect } from 'react'
+
 const Formulario = () => {
+  /* Use State  */
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
   const [email, setEmail] = useState('');
   const [alta, setAlta] = useState('');
   const [desc, setDesc] = useState('');
 
+  /* Se maneja el envio del formulario. */
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if ([nombre, propietario, email, alta, desc].includes('')) {
+      console.error('Algun campo vacio');
+    }else{
+      console.log('Correcto')
+    }
+  }
+
 
   return (
-    <div className='md:w-1/2 lg:w-2/5 bg-gray-100 rounded-lg border border-gray-200 shadow-md shadow-gray-300 p-5 m-2'>
+    <div className='md:w-1/2 lg:w-2/5 bg-gray-100 rounded-lg border border-gray-200 shadow-md shadow-gray-300 p-5 m-2' >
+      {/* Titulo */}
       <h2 className='font-black text-2xl text-center'>Seguimiento Pacientes</h2>
+      {/* Sub-titulo */}
       <p className='text-lg mt-5 mb-5 text-center'>
-        Añade Pacientes y {' '}
-        <span className='text-indigo-600 font-bold'>Administralos</span>
+        Añade Pacientes y {' '}<span className='text-indigo-600 font-bold'>Administralos</span>
       </p>
-      <form className='bg-white shadow-md rounded-lg py-10 px-5'>
+
+      {/* Formulario */}
+      <form className='bg-white shadow-md rounded-lg py-10 px-5' onSubmit={handleSubmit}>
+        {/* Mascota */}
         <div className='mt-5'>
           <label htmlFor='mascota' className='block text-gray-600 uppercase font-bold'>Nombre de la mascota</label>
           <input
@@ -25,6 +41,7 @@ const Formulario = () => {
             value={nombre}
             onChange={(event) => setNombre(event.target.value)} />
         </div>
+        {/* Propietario */}
         <div className='mt-5'>
           <label htmlFor='propietario' className='block text-gray-600 uppercase font-bold'>Nombre Propietario</label>
           <input
@@ -36,6 +53,7 @@ const Formulario = () => {
             onChange={(event) => setPropietario(event.target.value)}
           />
         </div>
+        {/* Email */}
         <div className='mt-5'>
           <label htmlFor='email' className='block text-gray-600 uppercase font-bold'>E-mail</label>
           <input
@@ -44,9 +62,9 @@ const Formulario = () => {
             className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-lg shadow-md shadow-gray-500/40'
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-
           />
         </div>
+        {/* Fecha de alta */}
         <div className='mt-5'>
           <label htmlFor='alta' className='block text-gray-600 uppercase font-bold'>Alta</label>
           <input
@@ -57,6 +75,7 @@ const Formulario = () => {
             onChange={(event) => setAlta(event.target.value)}
           />
         </div>
+        {/* Descripción */}
         <div className='mt-5'>
           <label htmlFor='alta' className='block text-gray-600 uppercase font-bold'>Descripción</label>
           <textarea
@@ -64,15 +83,14 @@ const Formulario = () => {
             type="text"
             placeholder='Describe los sintomas'
             className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-lg shadow-md shadow-gray-500/40'
-            value={edescail}
+            value={desc}
             onChange={(event) => setDesc(event.target.value)}
           />
         </div>
-
+        {/* btn - submit */}
         <input type='submit' className='bg-indigo-600 w-full p-3 text-white uppercase font-bold my-6 hover:bg-indigo-700 cursor-pointer' />
       </form>
     </div>
   )
 }
-
 export default Formulario
