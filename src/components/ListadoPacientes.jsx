@@ -10,10 +10,10 @@ const ListadoPacientes = () => (
             Administra tus pacientes y {' '}
             <span className='text-indigo-600 font-bold'>citas</span>
         </p>
-        <Pacientes/>
-        <Pacientes/>
-        <Pacientes/>
-        <Pacientes/>
+        <Pacientes />
+        <Pacientes />
+        <Pacientes />
+        <Pacientes />
     </div>
 
 )

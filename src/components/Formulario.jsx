@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 
-const Formulario = ({pacientes, setPacientes }) => {
-  /* Use State  */
+const Formulario = ({ pacientes, setPacientes }) => {
+  //# Use State
   const [nombre, setNombre] = useState('');
   const [propietario, setPropietario] = useState('');
   const [email, setEmail] = useState('');
   const [alta, setAlta] = useState('');
   const [desc, setDesc] = useState('');
 
-  /* Estado para el error de campo */
+  //# Estado para el error de campo
   const [error, setError] = useState(false)
 
-  /* Se maneja el envio del formulario. */
+  //# Se maneja el envio del formulario.
   const handleSubmit = (e) => {
     e.preventDefault();
     if ([nombre, propietario, email, alta, desc].includes('')) {
@@ -25,12 +25,13 @@ const Formulario = ({pacientes, setPacientes }) => {
       propietario,
       email,
       alta,
-      desc
+      desc,
     }
-    //console.log(objPaciente);
+
+    //# Se agregan los pacientes a setPacientes
     setPacientes([...pacientes, objPaciente])
 
-    /* Reiniciar el Fromulario */
+    //# Reiniciar el Fromulario
 
     setNombre('')
     setPropietario('')
