@@ -4,7 +4,7 @@ function Header(props) {
          <h1 className="font-black text-5xl text-center md:w-2/3 mx-auto py-3">
             Seguimiento Pacientes 
             <span className="text-indigo-500"> Veterinaria</span>
-            <p>{props.numeros}</p>
+            <p className="my-3">Bienvenido <span className="text-indigo-500">{props.nombre}</span></p>
          </h1>
       </div>
    )
