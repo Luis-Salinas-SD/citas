@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Error from "./Error";
 
 const Formulario = ({ pacientes, setPacientes }) => {
   //# Use State
@@ -44,17 +45,18 @@ const Formulario = ({ pacientes, setPacientes }) => {
     <div className='md:w-1/2 lg:w-2/5 bg-gray-100 rounded-lg border border-gray-200 shadow-md shadow-gray-300 p-5 m-2' >
       {/* Titulo */}
       <h2 className='font-black text-2xl text-center'>Seguimiento Pacientes</h2>
-      {/* Sub-titulo */}
+      {/* Subtitle */}
       <p className='text-lg mt-5 mb-5 text-center'>
         Añade Pacientes y {' '}<span className='text-indigo-600 font-bold'>Administralos</span>
       </p>
 
-      {/* Formulario */}
+      {/* Formulario  */}
       <form className='bg-white shadow-md rounded-lg py-10 px-5' onSubmit={handleSubmit}>
-        {/* Mensaje de error */}
-        {error && <div className='bg-red-500 text-white text-center rounded-lg p-2 mb-2 drop-shadow-xl'>
-          <p>¡Campos incompletos!</p>
-        </div>}
+        {/* Mensaje de Error */}
+        {error && <Error>
+          <h1>⚠️ Alto ⚠️</h1>
+          <p>Todos los campos son obligatorios</p>
+        </Error>}
 
         {/* Mascota */}
         <div className='mt-5'>
