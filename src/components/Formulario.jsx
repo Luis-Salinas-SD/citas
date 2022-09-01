@@ -12,6 +12,16 @@ const Formulario = ({ pacientes, setPacientes }) => {
   //# Estado para el error de campo
   const [error, setError] = useState(false)
 
+  //# Generar ID
+
+  const generarId = () => {
+    let w = Math.random().toString(36).substr(2);
+    let fecha = Date.now().toString(36)
+
+    return w + fecha
+  }
+
+
   //# Se maneja el envio del formulario.
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +37,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
       email,
       alta,
       desc,
+      id: generarId()
     }
 
     //# Se agregan los pacientes a setPacientes

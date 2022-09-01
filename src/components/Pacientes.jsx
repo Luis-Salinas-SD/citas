@@ -24,6 +24,7 @@ const Pacientes = ({ el }) => {
                 Descripción: {' '}
                 <span className='font-normal normal-case'> {desc} </span>
             </p>
+            {/* <p>{el.id}</p> */}
         </div>
     )
 }
