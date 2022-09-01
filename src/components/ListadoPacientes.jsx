@@ -2,7 +2,6 @@ import { render } from "react-dom"
 import Pacientes from "./Pacientes"
 
 const ListadoPacientes = ({ pacientes }) => {
-    //console.log(pacientes);
 
     return (
         <div className='md:w-1/2 lg:w3/5rounded-lg p-3 m-2 md:h-screen overflow-y-scroll'>
@@ -13,11 +12,14 @@ const ListadoPacientes = ({ pacientes }) => {
                 Administra tus pacientes y {' '}
                 <span className='text-indigo-600 font-bold'>citas</span>
             </p>
-            {pacientes.map(element => {
+
+            {pacientes.map((el) => (
+
                 <Pacientes
-                    pacientes={element.nombre}
+                    el={el}
                 />
-            })}
+
+            ))}
 
         </div>
     )
