@@ -6,6 +6,8 @@ import { useState } from "react";
 function App() {
   /* Hooks */
   const [pacientes, setPacientes] = useState([]);
+  //# Hook para editar
+  const [paciente, setPaciente] = useState({});
 
   return (
     <div className="container mx-auto mt-5">
@@ -21,6 +23,7 @@ function App() {
         />
         <ListadoPacientes
           pacientes={pacientes}
+          setPaciente={setPaciente}
         />
       </div>
     </div>

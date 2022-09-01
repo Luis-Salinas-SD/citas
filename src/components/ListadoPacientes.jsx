@@ -1,10 +1,11 @@
 import { render } from "react-dom"
 import Pacientes from "./Pacientes"
 
-const ListadoPacientes = ({ pacientes }) => {
+const ListadoPacientes = ({ pacientes, setPaciente }) => {
+
 
     return (
-        <div className='md:w-1/2 lg:w3/5rounded-lg p-3 m-2 md:h-screen overflow-y-scroll'>
+        <div className='md:w-1/2 lg:w3/5 rounded-lg p-3 m-2 md:h-screen overflow-y-scroll'>
             <h2 className='font-black text-2xl text-center'>
                 Listado de Pacientes
             </h2>
@@ -12,16 +13,20 @@ const ListadoPacientes = ({ pacientes }) => {
                 Administra tus pacientes y {' '}
                 <span className='text-indigo-600 font-bold'>citas</span>
             </p>
-
-            {pacientes.map((el) => (
-
-                <Pacientes
-                    key={el.id}
-                    el={el}
-                />
-
-            ))}
-
+            {pacientes && pacientes.length ? (
+                <>
+                    {pacientes.map((el) => (
+                        <Pacientes
+                            key={el.id}
+                            el={el}
+                        />
+                    ))}
+                </>
+            ) : (
+                <div className="bg-indigo-400 text-center text-white p-1 rounded-full">
+                    <h1>Aun no has agregado pacientes 🙇🏻‍♂️</h1>
+                </div>
+            )}
         </div>
     )
 

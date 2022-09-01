@@ -24,7 +24,10 @@ const Pacientes = ({ el }) => {
                 Descripción: {' '}
                 <span className='font-normal normal-case'> {desc} </span>
             </p>
-            {/* <p>{el.id}</p> */}
+            <div className="text-center">
+                <button type="button" className="py-2 px-10 bg-indigo-500 hover:bg-indigo-800 text-white rounded-full m-4">Editar</button>
+                <button type="button" className="py-2 px-10 bg-red-500 hover:bg-red-600 text-white rounded-full m-4">Eliminar</button>
+            </div>
         </div>
     )
 }
