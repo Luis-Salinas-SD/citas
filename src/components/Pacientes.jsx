@@ -1,5 +1,5 @@
 
-const Pacientes = ({ el }) => {
+const Pacientes = ({ el, setPaciente }) => {
     const { nombre, propietario, email, alta, desc } = el
     return (
         <div className='m-4 bg-white shadow-md px-5 py-8 rounded-xl border'>
@@ -25,7 +25,12 @@ const Pacientes = ({ el }) => {
                 <span className='font-normal normal-case'> {desc} </span>
             </p>
             <div className="text-center">
-                <button type="button" className="py-2 px-10 bg-indigo-500 hover:bg-indigo-800 text-white rounded-full m-4">Editar</button>
+                <button
+                    type="button"
+                    className="py-2 px-10 bg-indigo-500 hover:bg-indigo-800 text-white rounded-full m-4"
+                    onClick={() => { setPaciente(el) }}>
+                    Editar
+                </button>
                 <button type="button" className="py-2 px-10 bg-red-500 hover:bg-red-600 text-white rounded-full m-4">Eliminar</button>
             </div>
         </div>

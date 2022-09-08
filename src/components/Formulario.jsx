@@ -8,20 +8,14 @@ const Formulario = ({ pacientes, setPacientes }) => {
   const [email, setEmail] = useState('');
   const [alta, setAlta] = useState('');
   const [desc, setDesc] = useState('');
-
   //# Estado para el error de campo
   const [error, setError] = useState(false)
-
   //# Generar ID
-
   const generarId = () => {
     let w = Math.random().toString(36).substr(2);
     let fecha = Date.now().toString(36)
-
     return w + fecha
   }
-
-
   //# Se maneja el envio del formulario.
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,6 +25,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
       return;
     }
     setError(false)
+    //Objeto paciente
     const objPaciente = {
       nombre,
       propietario,
@@ -43,8 +38,7 @@ const Formulario = ({ pacientes, setPacientes }) => {
     //# Se agregan los pacientes a setPacientes
     setPacientes([...pacientes, objPaciente])
 
-    //# Reiniciar el Fromulario
-
+    //# Limpiar el Fromulario
     setNombre('')
     setPropietario('')
     setEmail('')
