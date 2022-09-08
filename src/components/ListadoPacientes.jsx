@@ -1,7 +1,12 @@
 import { render } from "react-dom"
 import Pacientes from "./Pacientes"
+import { useEffect } from "react";
 
 const ListadoPacientes = ({ pacientes, setPaciente }) => {
+
+    useEffect(() => {
+        console.log('se agrego un nuevo patitntito');
+    }, [])
 
     return (
         <div className='md:w-1/2 lg:w3/5 rounded-lg p-3 m-2 md:h-screen overflow-y-scroll'>
