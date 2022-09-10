@@ -1,5 +1,3 @@
-
-
 //& Componente de Error
 const Error = ({ children }) => {
     return (
