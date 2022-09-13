@@ -12,9 +12,10 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    console.log(paciente);
-  }, [paciente])
-  //# Generar ID
+    console.log('Pacienteee: ' + paciente);
+  }, [])
+
+  //# Generar ID para cada paciente
   const generarId = () => {
     let w = Math.random().toString(36).substr(2);
     let fecha = Date.now().toString(36)

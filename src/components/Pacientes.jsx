@@ -1,9 +1,5 @@
-import { useEffect } from "react";
 
 const Pacientes = ({ el, setPaciente }) => {
-    useEffect(() => {
-        console.log('Componente Listo');
-    }, [])
 
     const { nombre, propietario, email, alta, desc } = el
     return (
