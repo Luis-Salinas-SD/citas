@@ -21,6 +21,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
     let fecha = Date.now().toString(36)
     return w + fecha
   }
+
   //# Se maneja el envio del formulario.
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -61,7 +62,9 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
       </p>
 
       {/* Formulario  */}
+
       <form className='bg-white shadow-md rounded-lg py-10 px-5' onSubmit={handleSubmit}>
+
         {/* Mensaje de Error */}
         {error && <Error>
           <h1>⚠️ Alto ⚠️</h1>
@@ -79,6 +82,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             value={nombre}
             onChange={(event) => setNombre(event.target.value)} />
         </div>
+
         {/* Propietario */}
         <div className='mt-5'>
           <label htmlFor='propietario' className='block text-gray-600 uppercase font-bold'>Nombre Propietario</label>
@@ -91,6 +95,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             onChange={(event) => setPropietario(event.target.value)}
           />
         </div>
+
         {/* Email */}
         <div className='mt-5'>
           <label htmlFor='email' className='block text-gray-600 uppercase font-bold'>E-mail</label>
@@ -102,6 +107,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
+
         {/* Fecha de alta */}
         <div className='mt-5'>
           <label htmlFor='alta' className='block text-gray-600 uppercase font-bold'>Alta</label>
@@ -113,6 +119,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             onChange={(event) => setAlta(event.target.value)}
           />
         </div>
+
         {/* Descripción */}
         <div className='mt-5'>
           <label htmlFor='alta' className='block text-gray-600 uppercase font-bold'>Descripción</label>
@@ -125,6 +132,7 @@ const Formulario = ({ pacientes, setPacientes, paciente }) => {
             onChange={(event) => setDesc(event.target.value)}
           />
         </div>
+
         {/* btn - submit */}
         <input type='submit' className='bg-indigo-600 w-full p-3 text-white uppercase font-bold my-6 hover:bg-indigo-700 cursor-pointer' />
       </form>
